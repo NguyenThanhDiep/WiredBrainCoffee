@@ -71,6 +71,8 @@ namespace WiredBrainCoffee.Client.Components
 
         private void PlaceOrder()
         {
+            // TODO remove: Just for testing SonarCloud
+            var redundantText = "NTDTest";
             NavManager.NavigateTo("order-confirmation");
         }
     }
