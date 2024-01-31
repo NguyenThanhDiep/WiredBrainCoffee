@@ -16,7 +16,7 @@
                     <input class="form-control" style="max-width: 250px; display: inline-block;" placeholder="Search..." @bind="SearchTerm" />
                     <button @onclick="FilterMenu" class="btn btn-info">Search</button>
                     <hr />
-                    @if(FilteredMenu.Count() > 0)
+                    @if(FilteredMenu.Any())
                     {
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
                             @foreach (var item in FilteredMenu)
@@ -26,7 +26,7 @@
                         </div>
                     }
                 </div>
-                @if (FilteredMenu.Count() == 0)
+                @if (!FilteredMenu.Any())
                 {
                     <Tabs FullWidth SelectedTab="@(ActiveTab != null ? ActiveTab : "coffee")" SelectedTabChanged="@OnSelectedTabChanged">
                         <Items>
